@@ -4,6 +4,7 @@ import Navbar from './navbar';
 import AnimeCard from './Search'; 
 import './App.css';
 import LandingPage from './LandingPage'; // Adjust the path if necessary
+import Manga from './manga';
 function App() {
   const [topAnime, setTopAnime] = useState([]);
 
@@ -25,7 +26,7 @@ function App() {
     <Navbar /> 
     <AnimeCard /> 
     <LandingPage />
-
+  <Manga />
   </div>
        
      );

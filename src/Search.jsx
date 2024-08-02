@@ -70,7 +70,7 @@ function AnimeCard() {
           onChange={handleSearchChange}
           className="border border-gray-400 rounded px-3 py-2 w-full md:w-1/2 lg:w-1/3 rounded-full"
         />
-        <button type="submit" className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 ml-2 rounded-full">
+        <button type="submit" className="bg-red-500 text-white px-4  py-2 rounded hover:bg-red-600 ml-2  mt-2 rounded-full">
           Search
         </button>
       </form>

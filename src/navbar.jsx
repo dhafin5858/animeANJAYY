@@ -59,7 +59,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/popular" className="text-white hover:text-red-500 transition duration-300">
+              <a href="https://animeanjayy.netlify.app/" className="text-white hover:text-red-500 transition duration-300">
                 Popular
               </a>
             </li>
