@@ -8,10 +8,12 @@ function Navbar() {
   };
 
   return (
+    <div className="bg-gray-700  text-white"> {/* Dark background */}
+
     <nav className="p-4 sticky top-0 z-50"> 
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Website Logo/Title */}
-        <a href="/" className="text-red-500 text-2xl font-bold">
+        <a href="/" className="text-blue-500 text-2xl font-bold">
           AnimeANJAYY 
         </a>
 
@@ -71,6 +73,8 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    </div>
+    
   );
 }
 

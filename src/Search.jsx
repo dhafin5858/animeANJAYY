@@ -60,20 +60,29 @@ function AnimeCard() {
         };
       }, [selectedAnime]);
   return (
-    <div className='mt-8'>
-      {/* Search Bar */}
+    <div className="bg-gray-700  text-white"> {/* Dark background */}
+
+    <div className=''>
+      <div> {/* Search Bar */}
       <form onSubmit={handleSearchSubmit} className="mb-4 p-4">
+        
         <input 
+        
           type="text" 
           placeholder="Search anime..." 
           value={searchTerm} 
           onChange={handleSearchChange}
-          className="border border-gray-400 rounded px-3 py-2 w-full md:w-1/2 lg:w-1/3 rounded-full"
+          className="border border-gray-400 rounded px-3 py-2 w-full md:w-1/2 lg:w-1/3 rounded-xl"
         />
-        <button type="submit" className="bg-red-500 text-white px-4  py-2 rounded hover:bg-red-600 ml-2  mt-4 rounded-full">
+        
+        <button type="submit" className="bg-blue-600 text-white px-4  py-2 rounded hover:bg-blue-800 ml-2  mt-4 rounded-full">
           Search
         </button>
       </form>
+        
+      </div>
+     
+      
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
         {(searchResults.length > 0 ? searchResults : topAnime).map(anime => (
@@ -113,6 +122,7 @@ function AnimeCard() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
