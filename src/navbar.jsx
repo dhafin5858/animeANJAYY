@@ -54,17 +54,17 @@ function Navbar() {
         <div className={`w-full md:w-auto md:flex md:items-center ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
             <li>
-              <a href="/" className="text-white hover:text-red-500 transition duration-300">
+              <a href="" className="text-white hover:text-red-500 transition duration-300">
                 Home
               </a>
             </li>
             <li>
-              <a href="https://animeanjayy.netlify.app/" className="text-white hover:text-red-500 transition duration-300">
+              <a href="" className="text-white hover:text-red-500 transition duration-300">
                 Popular
               </a>
             </li>
   <li>
-              <a href="/popular" className="text-white hover:text-red-500 transition duration-300">
+              <a href="" className="text-white hover:text-red-500 transition duration-300">
                 Manga
               </a>
             </li>          </ul>

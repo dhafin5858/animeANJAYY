@@ -22,6 +22,8 @@ function App() {
   }, []);
 
   return (
+
+    
     <div>
     <Navbar /> 
     <AnimeCard /> 

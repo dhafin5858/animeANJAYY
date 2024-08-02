@@ -49,6 +49,7 @@ manga);
   }, [selectedManga]);
 
   return (
+    <div className="bg-gray-700 min-h-screen text-white"> {/* Dark background */}
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6 text-center">Top 20 Manga</h1>
 
@@ -57,13 +58,13 @@ manga);
         {topManga.map(manga => (
           <div
             key={manga.mal_id}
-            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
+            className="bg-gray-900 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
             onClick={() => openModal(manga)}
           >
             <img src={manga.images.jpg.image_url} alt={manga.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-lg font-bold mb-2 line-clamp-2">{manga.title}</h2>
-              <p className="text-gray-700 text-sm">Score: {manga.score}</p>
+              <p className="text-white text-sm">Score: {manga.score}</p>
             </div>
           </div>
         ))}
@@ -72,10 +73,10 @@ manga);
       {/* Modal */}
       {selectedManga && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" ref={modalRef}>
-          <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
+          <div className="bg-gray-900 rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
             {/* Close Button */}
             <button
-              className="absolute top-4 right-4 text-3xl text-gray-700 hover:text-red-500 focus:outline-none"
+              className="absolute top-4 right-4 text-3xl text-white hover:text-red-500 focus:outline-none"
               onClick={closeModal}
             >
               &times;
@@ -84,15 +85,16 @@ manga);
             {/* Manga Details */}
             <img src={selectedManga.images.jpg.large_image_url} alt={selectedManga.title} className="w-full h-64 object-cover mb-4" />
             <h2 className="text-2xl font-bold mb-2">{selectedManga.title}</h2>
-            <p className="text-gray-700 mb-2">Published: {selectedManga.published.string}</p> 
-            <p className="text-gray-700 mb-2">Chapters: {selectedManga.chapters}</p>
-            <p className="text-gray-700 mb-2">Volumes: {selectedManga.volumes}</p>
-            <p className="text-gray-700 mb-2">Score: {selectedManga.score}</p>
+            <p className="text-white mb-2">Published: {selectedManga.published.string}</p> 
+            <p className="text-white mb-2">Chapters: {selectedManga.chapters}</p>
+            <p className="text-white mb-2">Volumes: {selectedManga.volumes}</p>
+            <p className="text-white mb-2">Score: {selectedManga.score}</p>
             {/* Add more details as needed (synopsis, genres, etc.) */}
           </div>
         </div>
         )}
     </div>
+  </div>
   );
 }
 
