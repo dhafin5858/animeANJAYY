@@ -74,7 +74,7 @@ setSelectedAnime(anime);
           <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
             {/* Close Button */}
             <button
-              className="absolute top-4 right-4 text-3xl text-gray-700 hover:text-red-500 focus:outline-none"
+              className="absolute top-4 right-2 text-4xl font-bold text-black hover:text-red-500 focus:outline-none"
               onClick={closeModal}
             >
               &times;
