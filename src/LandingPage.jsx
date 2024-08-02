@@ -52,17 +52,17 @@ setSelectedAnime(anime);
       <h1 className="text-3xl font-bold mb-6 text-center">Top 10 Anime</h1>
 
       {/* Anime Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {topAnime.map(anime => (
           <div
             key={anime.mal_id}
-            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
+            className="bg-white rounded-2xl shadow-md overflow-hiddenhover:scale-105 transition-transform duration-300 "
             onClick={() => openModal(anime)}
           >
-            <img src={anime.images.jpg.image_url} alt={anime.title} className="w-full h-48 object-cover" />
+            <img src={anime.images.jpg.image_url} alt={anime.title} className="relative inset-0 flex pt-12 pl-8" />
             <div className="p-4">
               <h2 className="text-lg font-bold mb-2 line-clamp-2">{anime.title}</h2>
-              <p className="text-gray-700 text-sm">Score: {anime.score}</p>
+              <p className="text-black text-sm">Score: {anime.score}</p>
             </div>
           </div>
         ))}
@@ -71,7 +71,7 @@ setSelectedAnime(anime);
       {/* Modal */}
       {selectedAnime && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" ref={modalRef}>
-          <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-4/6 md:w-2/3 lg:w-2/5 flex justify-center relative">
             {/* Close Button */}
             <button
               className="absolute top-4 right-2 text-4xl font-bold text-black hover:text-red-500 focus:outline-none"
@@ -81,12 +81,18 @@ setSelectedAnime(anime);
             </button>
 
             {/* Anime Details */}
-            <img src={selectedAnime.images.jpg.large_image_url} alt={selectedAnime.title} className="w-full h-64 object-cover mb-4" />
+
+            <div className='mb-4 text-xl '>
             <h2 className="text-2xl font-bold mb-2">{selectedAnime.title}</h2>
-            <p className="text-gray-700 mb-2">Aired: {selectedAnime.aired.string}</p>
-            <p className="text-gray-700 mb-2">Episodes: {selectedAnime.episodes}</p>
-            <p className="text-gray-700 mb-2">Members: {selectedAnime.members}</p>
+            <p className="text-black mb-2">Aired: {selectedAnime.aired.string}</p>
+            <p className="text-black mb-2">Genres: {selectedAnime.genres.map(genre => genre.name).join(', ')}</p>
+            <p className="text-black mb-2">Episodes: {selectedAnime.episodes}</p>
+            <p className="text-black mb-2">Members: {selectedAnime.members}</p>
+            <img src={selectedAnime.images.jpg.large_image_url} alt={selectedAnime.title} className=" mb-4" />
+
             {/* Add more details as needed (synopsis, genres, etc.) */}
+            </div>
+           
           </div>
         </div>
       )}

@@ -58,10 +58,10 @@ manga);
         {topManga.map(manga => (
           <div
             key={manga.mal_id}
-            className="bg-gray-900 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
+            className="bg-gray-900 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300 "
             onClick={() => openModal(manga)}
           >
-            <img src={manga.images.jpg.image_url} alt={manga.title} className="w-full h-48 object-cover" />
+            <img src={manga.images.jpg.image_url} alt={manga.title} className="relative inset-0 flex pt-12 pl-8" />
             <div className="p-4">
               <h2 className="text-lg font-bold mb-2 line-clamp-2">{manga.title}</h2>
               <p className="text-white text-sm">Score: {manga.score}</p>
@@ -73,7 +73,7 @@ manga);
       {/* Modal */}
       {selectedManga && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" ref={modalRef}>
-          <div className="bg-gray-900 rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 relative">
+          <div className="bg-gray-900   rounded-lg shadow-lg p-6 w-4/6 md:w-2/3 lg:w-2/5 flex justify-center relative">
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-3xl text-white hover:text-red-500 focus:outline-none"
@@ -83,13 +83,17 @@ manga);
             </button>
 
             {/* Manga Details */}
-            <img src={selectedManga.images.jpg.large_image_url} alt={selectedManga.title} className="w-full h-64 object-cover mb-4" />
+            <div>
             <h2 className="text-2xl font-bold mb-2">{selectedManga.title}</h2>
             <p className="text-white mb-2">Published: {selectedManga.published.string}</p> 
             <p className="text-white mb-2">Chapters: {selectedManga.chapters}</p>
             <p className="text-white mb-2">Volumes: {selectedManga.volumes}</p>
             <p className="text-white mb-2">Score: {selectedManga.score}</p>
+            <img src={selectedManga.images.jpg.large_image_url} alt={selectedManga.title} className=" mb-4" />
+
             {/* Add more details as needed (synopsis, genres, etc.) */}
+            </div>
+         
           </div>
         </div>
         )}
