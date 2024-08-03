@@ -84,12 +84,12 @@ setSelectedAnime(anime);
 
             {/* Anime Details */}
 
-            <div className='mb-4 text-xl '>
+            <div className='mb-4 sm:text-sm'>
             <h2 className="text-2xl font-bold mb-2 text-white">{selectedAnime.title}</h2>
-            <p className=" mb-2">Aired: {selectedAnime.aired.string}</p>
-            <p className=" mb-2">Genres: {selectedAnime.genres.map(genre => genre.name).join(', ')}</p>
-            <p className=" mb-2">Episodes: {selectedAnime.episodes}</p>
-            <p className=" mb-2">Members: {selectedAnime.members}</p>
+            <p className=" mb-2 text-xl">Aired: {selectedAnime.aired.string}</p>
+            <p className=" mb-2 text-xl" >Genres: {selectedAnime.genres.map(genre => genre.name).join(', ')}</p>
+            <p className=" mb-2 text-xl">Episodes: {selectedAnime.episodes}</p>
+            <p className=" mb-2 text-xl">Members: {selectedAnime.members}</p>
             <img src={selectedAnime.images.jpg.large_image_url} alt={selectedAnime.title} className=" mb-4" />
 
             {/* Add more details as needed (synopsis, genres, etc.) */}
