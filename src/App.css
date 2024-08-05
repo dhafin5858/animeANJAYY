@@ -3,15 +3,11 @@
   top: 0;
   width: 100%;
   z-index: 50;
-  backdrop-filter: blur(5px); /* Add blur effect for transparency */
+}
+
+.sticky1 {
+  backdrop-filer: blur(5px); /* Add blur effect for transparency */
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
 }
 
-/* Smooth Transition for Hamburger Menu */
-.w-full.md\:w-auto { 
-  transition: height 0.3s ease-in-out; 
-}
 
-.w-6.h-6 { 
-  transition: opacity 0.3s ease-in-out; 
-}
