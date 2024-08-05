@@ -50,11 +50,12 @@ manga);
 
   return (
     <div className="bg-gray-700 min-h-screen text-white"> {/* Dark background */}
+
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">Top 20 Manga</h1>
+    <h1 className="text-4xl font-bold mb-6 text-center underline decoration-solid  decoration-4 decoration-red-500 transform">Top 10 Manga</h1>
 
       {/* Manga Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {topManga.map(manga => (
           <div
             key={manga.mal_id}
@@ -84,12 +85,14 @@ manga);
 
             {/* Manga Details */}
             <div>
+            <img src={selectedManga.images.jpg.large_image_url} alt={selectedManga.title} className=" mb-4" />
+
             <h2 className="text-2xl font-bold mb-2">{selectedManga.title}</h2>
             <p className="text-white mb-2">Published: {selectedManga.published.string}</p> 
             <p className="text-white mb-2">Chapters: {selectedManga.chapters}</p>
             <p className="text-white mb-2">Volumes: {selectedManga.volumes}</p>
             <p className="text-white mb-2">Score: {selectedManga.score}</p>
-            <img src={selectedManga.images.jpg.large_image_url} alt={selectedManga.title} className=" mb-4" />
+            <p className="text-white mb-2">Status: {selectedManga.status}</p>
 
             {/* Add more details as needed (synopsis, genres, etc.) */}
             </div>

@@ -60,7 +60,8 @@ function AnimeCard() {
         };
       }, [selectedAnime]);
   return (
-    <div className="bg-gray-700  text-white"> {/* Dark background */}
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1679015099.
+    <div className="  pt-8 mt-12  text-white transform xl:items-center justify-self-stretch"> {/* Dark background */}
 
     <div className=''>
       <div> {/* Search Bar */}
@@ -120,7 +121,7 @@ function AnimeCard() {
 <h2 className="text-2xl font-bold mb-2">{selectedAnime.title}</h2>
 <p className=" mb-2 text-xl">Aired: {selectedAnime.aired.string}</p>
 <p className=" mb-2 text-xl">Episodes: {selectedAnime.episodes}</p>
-<p className=" mb-2 text-xl">Members: {selectedAnime.members}</p>
+<p className=" mb-2 text-xl">Status: {selectedAnime.status}</p>
 
 {/* Add more details as needed (synopsis, genres, etc.) */}
             </div>

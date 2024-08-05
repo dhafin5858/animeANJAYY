@@ -48,17 +48,23 @@ setSelectedAnime(anime);
   }, [selectedAnime]);
 
   return (
+
+    
     <div className="bg-gray-700 min-h-screen text-white"> {/* Dark background */}
 
+
+
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">Top 10 Anime</h1>
+    <h1 className="text-4xl font-bold mb-6 text-center underline decoration-solid transform  decoration-4 decoration-blue-500">Top 10 Anime</h1>
+
+
 
       {/* Anime Card Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {topAnime.map(anime => (
           <div
             key={anime.mal_id}
-            className="bg-gray-900 rounded-2xl shadow-md overflow-hiddenhover:scale-105 transition-transform duration-300 "
+            className="bg-gray-900 rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300 "
             onClick={() => openModal(anime)}
           >
             <img src={anime.images.jpg.image_url} alt={anime.title} className="relative inset-0 flex pt-12 pl-8" />
@@ -87,11 +93,11 @@ setSelectedAnime(anime);
             <div className='mb-4 sm:text-sm'>
               
               <img src={selectedAnime.images.jpg.large_image_url} alt={selectedAnime.title} className="" />
-  
   <h2 className="text-2xl font-bold mb-2">{selectedAnime.title}</h2>
   <p className=" mb-2 text-xl">Aired: {selectedAnime.aired.string}</p>
   <p className=" mb-2 text-xl">Episodes: {selectedAnime.episodes}</p>
-  <p className=" mb-2 text-xl">Members: {selectedAnime.members}</p>
+  <p className=" mb-2 text-xl">Status: {selectedAnime.status}</p>
+
 
             {/* Add more details as needed (synopsis, genres, etc.) */}
             </div>

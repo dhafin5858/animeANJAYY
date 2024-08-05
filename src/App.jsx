@@ -5,6 +5,11 @@ import AnimeCard from './Search';
 import './App.css';
 import LandingPage from './LandingPage'; // Adjust the path if necessary
 import Manga from './manga';
+import InteractiveBackground from './InteractiveBackground'; // Adjust path if needed
+
+
+
+
 function App() {
   const [topAnime, setTopAnime] = useState([]);
 
@@ -22,17 +27,15 @@ function App() {
   }, []);
 
   return (
-
-    
-    <div>
-    <Navbar /> 
-    <AnimeCard /> 
-    <LandingPage />
-  <Manga />
-  </div>
-       
-     );
-   }
+    <div style={{  }}> {/* Set zIndex here */}
+    <InteractiveBackground />
+      <Navbar /> 
+      <AnimeCard /> 
+      <LandingPage />
+      <Manga />
+    </div>
+  );
+}
    
 
 export default App;
